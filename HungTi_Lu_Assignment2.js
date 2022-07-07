@@ -52,20 +52,6 @@ const second = [
 ];
 // Question 5
 function question5() {
-  // let obj = first.concat(second);
-
-  // const newObj = [];
-  // obj.forEach((item) => {
-  //   const str = item.uuid - 1;
-  //   if (typeof newObj[str] === "undefined") {
-  //     newObj[str] = item;
-  //     console.log(newObj[str], item);
-  //   } else {
-  //     newObj[str].name = `${item.name}`;
-  //     newObj[str].role = `${item.role}`;
-  //   }
-  // });
-
   let obj = first.reduce((pre, cur) => {
     let temp = pre.find((ee) => ee.uuid == cur.uuid);
     if (temp) {
@@ -88,8 +74,8 @@ function question5() {
   console.log(obj);
 }
 
- question1();
- question2();
- question3();
- question4();
+question1();
+question2();
+question3();
+question4();
 question5();
