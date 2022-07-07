@@ -88,8 +88,8 @@ function question5() {
   console.log(obj);
 }
 
-// question1();
-// question2();
-// question3();
-// question4();
+ question1();
+ question2();
+ question3();
+ question4();
 question5();
