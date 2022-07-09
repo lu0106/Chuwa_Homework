@@ -53,7 +53,7 @@ const second = [
 // Question 5
 function question5() {
   let obj = first.reduce((pre, cur) => {
-    let temp = pre.find((ee) => ee.uuid == cur.uuid);
+    let temp = pre.find((ele) => ele.uuid === cur.uuid);
     if (temp) {
       Object.assign(temp, cur);
     } else {
