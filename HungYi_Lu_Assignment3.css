@@ -1,0 +1,13 @@
+.question1 {
+  height: 200px;
+}
+.question1 > table {
+  border-collapse: collapse;
+  width: 50%;
+}
+.question1 > table,
+td,
+th {
+  border: 1px solid;
+  text-align: center;
+}
