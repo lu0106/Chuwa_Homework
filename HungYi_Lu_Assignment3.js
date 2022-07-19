@@ -27,7 +27,7 @@ const tableInfo = {
     },
   ],
 };
-
+// Question 1
 let thead = document.querySelector("#thead");
 let row1 = document.createElement("tr");
 
@@ -37,26 +37,20 @@ let title = tableInfo.tableHeader.map((ele) => {
   return th;
 });
 
-title.forEach((ele) => {
-  row1.appendChild(ele);
-});
+row1.append(...title);
 thead.append(row1);
 
 let tbody = document.querySelector("#tbody");
+
 tableInfo.tableContent.forEach((ele) => {
-  function getElement(obj) {
-    let arr = [];
-    for (i in obj) {
-      let th = document.createElement("th");
-      th.textContent = obj[i];
-      arr.push(th);
-    }
-    return arr;
-  }
   let row2 = document.createElement("tr");
-  getElement(ele).forEach((element) => {
-    row2.appendChild(element);
+  let arr = Object.keys(ele).map((key) => {
+    let th = document.createElement("th");
+    console.log(ele[key]);
+    th.textContent = ele[key];
+    return th;
   });
+  row2.append(...arr);
   tbody.append(row2);
 });
 

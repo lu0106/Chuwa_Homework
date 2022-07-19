@@ -6,11 +6,12 @@ const itemObject = [
 
 // Question 1
 function question1() {
-  let arr = itemObject.map((item) => {
-    let obj = { ...item };
-    obj.quantity = obj.quantity * 2;
-    obj.price = obj.price * 2;
-    return obj;
+  let arr = itemObject.map(({ quantity, price }) => {
+    return { quantity: quantity * 2, price: price * 2 };
+    // let obj = { ...item };
+    // obj.quantity = obj.quantity * 2;
+    // obj.price = obj.price * 2;
+    // return obj;
   });
   console.log(arr);
 }
@@ -54,12 +55,7 @@ const second = [
 function question5() {
   let obj = first.reduce((pre, cur) => {
     let temp = pre.find((ele) => ele.uuid === cur.uuid);
-    if (temp) {
-      Object.assign(temp, cur);
-    } else {
-      pre.push(cur);
-    }
-    return pre;
+    if (temp ? Object.assign(temp, cur) : pre.push(cur)) return pre;
   }, second);
 
   obj.sort((a, b) => {
@@ -72,6 +68,25 @@ function question5() {
   });
 
   console.log(obj);
+
+  // const map = {};
+  // const mergedArray = [...first, ...second];
+  // mergedArray.forEach((ele) => {
+  //   if (!map[ele.uuid]) {
+  //     map[ele.uuid] = {
+  //       uuid: ele.uuid,
+  //       name: !ele.name ? null : ele.name,
+  //       role: !ele.role ? null : ele.role,
+  //     };
+  //   } else {
+  //     map[ele.uuid] = { ...map[ele.uuid], ...ele };
+  //   }
+  // });
+
+  // const sortedArray = Object.values(map).sort((left, right) => {
+  //   return left.uuid - right.uuid;
+  // });
+  // console.log(sortedArray);
 }
 
 question1();
