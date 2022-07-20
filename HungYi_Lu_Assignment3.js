@@ -44,10 +44,9 @@ let tbody = document.querySelector("#tbody");
 
 tableInfo.tableContent.forEach((ele) => {
   let row2 = document.createElement("tr");
-  let arr = Object.keys(ele).map((key) => {
+  let arr = Object.values(ele).map((value) => {
     let th = document.createElement("th");
-    console.log(ele[key]);
-    th.textContent = ele[key];
+    th.textContent = value;
     return th;
   });
   row2.append(...arr);
